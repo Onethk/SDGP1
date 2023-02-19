@@ -31,7 +31,7 @@
                         <a class="nav-link" href="#">Tips n Tricks</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Testomonials</a>
+                        <a class="nav-link" aria-current="page" href="#">Testomonialssss</a>
                         </li>
                         
                         
