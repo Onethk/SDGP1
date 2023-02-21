@@ -28,7 +28,7 @@
                         <a class="nav-link" href="#">Questions</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="#">Tips n Tricks</a>
+                        <a class="nav-link" href="tips.php">Tips n Tricks</a>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="#">Testomonials</a>
