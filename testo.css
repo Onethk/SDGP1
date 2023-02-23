@@ -1,42 +1,44 @@
+.nav-link{
+    margin-right: 45px;
+    margin-left: 50px;
+    color: #7B8FA1;
+    font-weight: 500;
+    /* font-size: 15px; */
+    /* position: absolute; */
+    /* right: 20%; */
+
+}
+.nav-link:hover{
+    color: #4B56D2;
+}
+
+.navbar-brand{
+    color: black;
+    font-weight: bold;
+    /* font-family:system-ui, -apple-system, BlinkMac SystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+}
+
+
 *{
+    /* background: url(./images/image13.avif)no-repeat; */
     margin: 0px;
     padding: 0px;
-    font-family: poppins;
+    /* font-family: poppins; */
     box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 a{
    text-decoration: none;
 }  
 #testimonials{
+    background: url(./images/image13.avif)no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction:column;
     width: 100%;
 }
-.testimonial-heading{
-    letter-spacing: 1px;
-    margin: 3opx 0px;
-    padding: 10px 20px;
-    display: flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items: center;
-}
-.testimonial-heading h1{
-    font-size: 2.2rem;
-    font-weight: 500;
-    background-color: #202020;
-    color:darkcyan;
-    padding: 10px 20px;
-}
-.testimonial-heading span{
-    font-size: 1.3rem;
-    color: #252525;
-    margin-bottom: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
+
 .testimonial-box-container{
     display: flex;
     justify-content:center;
@@ -45,12 +47,15 @@ a{
     width: 100% ;
 }
 .testimonial-box{
+    padding-top: 20px;
     width: 500px;
     box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
-    background-color:cadetblue;
+    background-color:#75bbe7;
     padding: 20px;
     margin: 15px;
     cursor: pointer;
+    border-radius: 30px;
+
 }
 .profile-img{
     width: 50px;
@@ -59,22 +64,22 @@ a{
     overflow:hidden;
     margin-right: 10px;
 }
-    .profile-img img{ 
-        width:100%;
-        height:100%;
-        object-fit: cover;
-        object-position: center;
-    }
-    .profile{
-        display: flex;
-        align-items: center;
-    }
-    .name-user{
-        display: flex;
-        flex-direction: column;
-    }
-  .name-user strong{
-    color: #3d3d3d;
+.profile-img img{ 
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    object-position: center;
+}
+.profile{
+    display: flex;
+    align-items: center;
+}
+.name-user{
+    display: flex;
+    flex-direction: column;
+}
+.name-user strong{
+    color: black;
     font-size: 1.1rem;
     letter-spacing: 0.5px;
   }  
@@ -93,7 +98,7 @@ a{
   }
   .client-comment p{
      font-size: 0.9rem;
-     color: #4b4b4b;    
+     color: black;    
   }
   .testimonial-box:hover{
     transform: translateY(-10px);
@@ -126,9 +131,4 @@ a{
             color: white;
             background-color: #252525;
         }
-    
-
-
-
-    
 
