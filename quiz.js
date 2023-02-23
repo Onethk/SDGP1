@@ -109,7 +109,7 @@ const quizData = [
     },
 ];
 const quiz= document.getElementById('quiz')
-const answerEls = document.querySelectorAll('.answer')
+var answerEls = document.getElementsByClassName('answer');
 const questionEl = document.getElementById('question')
 const a_text = document.getElementById('a_text')
 const b_text = document.getElementById('b_text')
@@ -160,18 +160,23 @@ function loadQuiz() {
 }
 
 function deselectAnswers() {
-    answerEls.forEach(answerEl => answerEl.checked = false)
+    for(i=0; i<answerEls.length; i++){
+
+        if (answerEls[i].checked) {
+            answerEls[i] = false;
+        }}
 }
 
 function getSelected() {
-    let answer
-    answerEls.forEach(answerEl => {
-        if(answerEl.checked) {
-            answer = (answerEl.id).toString();   
-                
+    let answer;
+    for(i=0; i<answerEls.length; i++){
+
+        if (answerEls[i].checked) {
+            console.log(answerEls[i].id);
+            answer=answerEls[i].id;
         }
-    })
-    return answer
+    }
+    return answer;
 }
 
 submitBtn.addEventListener('click', () => {
@@ -195,9 +200,11 @@ submitBtn.addEventListener('click', () => {
             qizBRemove.remove();
             var qizRemove= document.getElementById('head');
             qizRemove.remove();
-            for (i = 0; i < outputs.length; i++)
-                document.getElementById("quiz").innerHTML+= (i+1) + ": " + outputs[i];
-
-       } 
+            document.getElementById("quiz").innerHTML+="Input data to ML model :";
+            for (i = 0; i < outputs.length; i++){
+                document.getElementById("quiz").innerHTML+= outputs[i]+" , " ;
+            }
+            document.getElementById("quiz").innerHTML+=" <button> view tips and advices</button>";
+            } 
     
 })
