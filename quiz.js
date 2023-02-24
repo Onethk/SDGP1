@@ -120,51 +120,43 @@ const submitBtn = document.getElementById('submit')
 const outputs=[];
 let currentQuiz = 0
 let score = 0
+let turn=0
 loadQuiz()
 function loadQuiz() {
-    deselectAnswers()
     const currentQuizData = quizData[currentQuiz]
     questionEl.innerText = currentQuizData.question
     
     if (currentQuizData.a !="answer") {
-    	document.getElementById("QA1").innerHTML +="<div id='ansDiv1'><input type='radio' name='answer' id='a' class='answer'><label for='a' id='a_text'>"+currentQuizData.a+"</label></div>";   	
+    	document.getElementById("QA1").innerHTML +="<div id='ansDiv1'><input type='radio' name='answer' id='a' class='answer' value='a' required><label for='a' id='a_text'>"+currentQuizData.a+"</label></div>";   	
     }else{
     	document.getElementById("QA1").innerHTML +="<div id='ansDiv1'></div>";
     }
     
 
     if (currentQuizData.b !="answer") {
-    	document.getElementById("QA2").innerHTML +="<div id='ansDiv2'><input type='radio' name='answer' id='b' class='answer'><label for='b' id='b_text'>"+currentQuizData.b+"</label></div>";	
+    	document.getElementById("QA2").innerHTML +="<div id='ansDiv2'><input type='radio' name='answer' id='b' class='answer' value='b' ><label for='b' id='b_text'>"+currentQuizData.b+"</label></div>";	
     }else{
     	document.getElementById("QA2").innerHTML +="<div id='ansDiv2'></div>";
     }
    
 
     if (currentQuizData.c !="answer") {
-    	document.getElementById("QA3").innerHTML +="<div id='ansDiv3'><input type='radio' name='answer' id='c' class='answer'><label for='c' id='c_text'>"+currentQuizData.c+"</label></div>";    	
+    	document.getElementById("QA3").innerHTML +="<div id='ansDiv3'><input type='radio' name='answer' id='c' class='answer' value='c' ><label for='c' id='c_text'>"+currentQuizData.c+"</label></div>";    	
     }else{
     	document.getElementById("QA3").innerHTML +="<div id='ansDiv3'></div>";
     }
   
     if (currentQuizData.d !="answer") {
-    	document.getElementById("QA4").innerHTML +="<div id='ansDiv4'><input type='radio' name='answer' id='d' class='answer'><label for='d' id='d_text'>"+currentQuizData.d+"</label></div>";    	
+    	document.getElementById("QA4").innerHTML +="<div id='ansDiv4'><input type='radio' name='answer' id='d' class='answer' value='d' ><label for='d' id='d_text'>"+currentQuizData.d+"</label></div>";    	
     }else{
     	document.getElementById("QA4").innerHTML +="<div id='ansDiv4'></div>";
     }  
 
     if (currentQuizData.e !="answer") {
-    	document.getElementById("QA5").innerHTML +="<div id='ansDiv5'><input type='radio' name='answer' id='e' class='answer'><label for='e' id='e_text'>"+currentQuizData.e+"</label></div>";    	
+    	document.getElementById("QA5").innerHTML +="<div id='ansDiv5'><input type='radio' name='answer' id='e' class='answer' value='e' ><label for='e' id='e_text'>"+currentQuizData.e+"</label></div>";    	
     }else{
     	document.getElementById("QA5").innerHTML +="<div id='ansDiv5'></div>";
     }  
-}
-
-function deselectAnswers() {
-    for(i=0; i<answerEls.length; i++){
-
-        if (answerEls[i].checked) {
-            answerEls[i] = false;
-        }}
 }
 
 function getSelected() {
@@ -172,39 +164,47 @@ function getSelected() {
     for(i=0; i<answerEls.length; i++){
 
         if (answerEls[i].checked) {
+        	turn=1;
+        	console.log(answerEls[i]);
+
             console.log(answerEls[i].id);
             answer=answerEls[i].id;
         }
     }
+    console.log(answer);
     return answer;
 }
 
 submitBtn.addEventListener('click', () => {
-    const answer = getSelected()
-    outputs[currentQuiz]=answer;    
-    var AnsRemove1= document.getElementById('ansDiv1');
-    AnsRemove1.remove();
-    var AnsRemove2= document.getElementById('ansDiv2');
-    AnsRemove2.remove();
-    var AnsRemove3= document.getElementById('ansDiv3');
-    AnsRemove3.remove();
-    var AnsRemove4= document.getElementById('ansDiv4');
-    AnsRemove4.remove();
-    var AnsRemove5= document.getElementById('ansDiv5');
-    AnsRemove5.remove();
-    currentQuiz++
-    if(currentQuiz < quizData.length){
-           loadQuiz()
-       }else{
-       		var qizBRemove= document.getElementById('submit');
-            qizBRemove.remove();
-            var qizRemove= document.getElementById('head');
-            qizRemove.remove();
-            document.getElementById("quiz").innerHTML+="Input data to ML model :";
-            for (i = 0; i < outputs.length; i++){
-                document.getElementById("quiz").innerHTML+= outputs[i]+" , " ;
-            }
-            document.getElementById("quiz").innerHTML+=" <button> view tips and advices</button>";
-            } 
-    
-})
+
+    const answer = getSelected();
+    if(answer!=undefined){
+	    outputs[currentQuiz]=answer;  
+	    var AnsRemove1= document.getElementById('ansDiv1');
+	    AnsRemove1.remove();
+	    var AnsRemove2= document.getElementById('ansDiv2');
+	    AnsRemove2.remove();
+	    var AnsRemove3= document.getElementById('ansDiv3');
+	    AnsRemove3.remove();
+	    var AnsRemove4= document.getElementById('ansDiv4');
+	    AnsRemove4.remove();
+	    var AnsRemove5= document.getElementById('ansDiv5');
+	    AnsRemove5.remove();
+	    currentQuiz++
+	    if(currentQuiz < quizData.length){
+	           loadQuiz()
+	    	
+	       }else{
+	       		var qizBRemove= document.getElementById('submit');
+	            qizBRemove.remove();
+	            var qizRemove= document.getElementById('head');
+	            qizRemove.remove();
+	            document.getElementById("quiz").innerHTML+="Input data to ML model :";
+	            for (i = 0; i < outputs.length; i++){
+	                document.getElementById("quiz").innerHTML+= outputs[i]+" , " ;
+	            }
+	            document.getElementById("quiz").innerHTML+=" <button> view tips and advices</button>";
+	            }
+	        }
+	    }
+	        )
