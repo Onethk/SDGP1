@@ -25,7 +25,13 @@ body{
     width: 450px;
     height: 450px;
     background-color: white;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
 
+}
+.imageClass{
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 #form-inside{

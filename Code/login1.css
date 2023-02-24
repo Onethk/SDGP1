@@ -14,6 +14,8 @@ body{
     left: 20%;
 
     border-radius: 5px;
+    
+
 
     width: 900px;
     height: 450px;
@@ -25,6 +27,8 @@ body{
     width: 450px;
     height: 450px;
     background-color: white;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
 
 }
 
@@ -39,6 +43,11 @@ body{
     left: 16%;
     top: 15%;
     color: black;
+}
+
+.imageClass{
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 .loginInputs{
@@ -56,3 +65,4 @@ body{
     border: 1px solid black;
 
 }
+

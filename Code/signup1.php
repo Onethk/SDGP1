@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link rel="stylesheet" type="text/css" href="style2.css"/>
+    <link rel="stylesheet" type="text/css" href="signup1.css"/>
 
 </head>
 
@@ -30,7 +30,7 @@
         </div>
 
         <div class="image1">
-            <img src="images/image2.avif" alt="" height=450px width=450px >
+            <img src="images/image2.avif" alt="" height=450px width=450px  class="imageClass">
             </div>
 
     

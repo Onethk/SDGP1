@@ -18,7 +18,7 @@
 
         }else{
             echo '<script>
-            window.location.href = "index1.php";
+            window.location.href = "login1.php";
             alert("Login failed. Invalid username or password !!!");
             </script>';
             
