@@ -18,12 +18,12 @@
     /* font-family:system-ui, -apple-system, BlinkMac SystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
 }
 body{
-    background: url(./images/image10.avif)no-repeat;
+    background: url(./images/image6.avif)no-repeat;
 
 }
 
 *{
-    background: url(./images/image10.avif)no-repeat;
+    /* background: url(./images/image10.avif)no-repeat; */
     margin: 0px;
     padding: 0px;
     /* font-family: poppins; */
@@ -40,6 +40,7 @@ a{
     align-items: center;
     flex-direction:column;
     width: 100%;
+    
 }
 
 .testimonial-box-container{
@@ -53,7 +54,8 @@ a{
     padding-top: 20px;
     width: 500px;
     box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
-    background-color:#75bbe7;
+    background-color:#8fcbf0;
+    /* background-color: white; */
     padding: 20px;
     margin: 15px;
     cursor: pointer;
@@ -87,7 +89,7 @@ a{
     letter-spacing: 0.5px;
   }  
   .name-user span{
-    color:aliceblue;
+    color:black;
     font-size:0.8rem;
   }
   .reviews{
