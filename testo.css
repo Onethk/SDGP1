@@ -17,10 +17,13 @@
     font-weight: bold;
     /* font-family:system-ui, -apple-system, BlinkMac SystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
 }
+body{
+    background: url(./images/image10.avif)no-repeat;
 
+}
 
 *{
-    /* background: url(./images/image13.avif)no-repeat; */
+    background: url(./images/image10.avif)no-repeat;
     margin: 0px;
     padding: 0px;
     /* font-family: poppins; */
@@ -31,7 +34,7 @@ a{
    text-decoration: none;
 }  
 #testimonials{
-    background: url(./images/image13.avif)no-repeat;
+    /* background: url(./images/image10.avif)no-repeat; */
     display: flex;
     justify-content: center;
     align-items: center;

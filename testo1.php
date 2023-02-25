@@ -52,7 +52,7 @@
                <div class="profile">
 
                <div class="profile-img">
-                     <img src="images\d9ee1a16042ad51de40518f2abed9007.png"/>
+                     <img src="./images/user1.jpg"/>
                   </div>
                   
                   <div class="name-user">
@@ -87,7 +87,7 @@
                <div class="profile">
 
                <div class="profile-img">
-                     <img src="images\d9ee1a16042ad51de40518f2abed9007.png"/>
+               <img src="./images/user2.jpeg"/>
                   </div>
                   
                   <div class="name-user">
@@ -121,7 +121,40 @@
                <div class="profile">
 
                <div class="profile-img">
-                     <img src="images\d9ee1a16042ad51de40518f2abed9007.png"/>
+                  <img src="./images/user4.avif"/>
+                  </div>
+                  
+                  <div class="name-user">
+                     <strong>Darren Paxton</strong>
+                     <span>@darrenpax98</span>
+                  </div>
+               </div>
+
+               <div class="reviews">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+               </div>
+
+            </div>
+            
+            <div class="client-comments">
+               <p>An amazing adequate app for the satisfactory of below average students to a better position</p>
+            </div>
+         </div>
+      </div>
+      <div class="testimonials-box-container">
+
+         <div class="testimonial-box">
+
+         <div class="box-top">
+
+               <div class="profile">
+
+               <div class="profile-img">
+                     <img src="./images/user3.jpeg"/>
                   </div>
                   
                   <div class="name-user">

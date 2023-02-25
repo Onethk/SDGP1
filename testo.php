@@ -51,7 +51,7 @@
                <div class="profile">
 
                <div class="profile-img">
-                     <img src="images\d9ee1a16042ad51de40518f2abed9007.png"/>
+                     <img src="./images/user1.jpg"/>
                   </div>
                   
                   <div class="name-user">
@@ -86,7 +86,7 @@
                <div class="profile">
 
                <div class="profile-img">
-                     <img src="images\d9ee1a16042ad51de40518f2abed9007.png"/>
+               <img src="./images/user2.jpeg"/>
                   </div>
                   
                   <div class="name-user">
@@ -120,8 +120,8 @@
                <div class="profile">
 
                <div class="profile-img">
-                     <img src="images\d9ee1a16042ad51de40518f2abed9007.png"/>
-                  </div>
+                  <img src="./images/user3.jpeg"/>
+               </div>
                   
                   <div class="name-user">
                      <strong>Darren Paxton</strong>
