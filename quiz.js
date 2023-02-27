@@ -233,13 +233,13 @@ function passingArray() {
       if (outputs[x] == "a") {
         MLinputs[x] = 1;
       } else if (outputs[x] == "b") {
-        MLinputs[x] = 2;
+        MLinputs[x] = 0;
       }
     } else if ((x = 2)) {
       if (outputs[x] == "a") {
         MLinputs[x] = 1;
       } else if (outputs[x] == "b") {
-        MLinputs[x] = 2;
+        MLinputs[x] = 0;
       }
     } else if ((x = 3)) {
       if (outputs[x] == "a") {
@@ -289,7 +289,7 @@ function passingArray() {
       if (outputs[x] == "a") {
         MLinputs[x] = 1;
       } else if (outputs[x] == "b") {
-        MLinputs[x] = 2;
+        MLinputs[x] = 0;
       }
     } else if ((x = 9)) {
       if (outputs[x] == "a") {
@@ -305,7 +305,7 @@ function passingArray() {
       if (outputs[x] == "a") {
         MLinputs[x] = 1;
       } else if (outputs[x] == "b") {
-        MLinputs[x] = 2;
+        MLinputs[x] = 0;
       }
     } else if ((x = 10)) {
       if (outputs[x] == "a") {
