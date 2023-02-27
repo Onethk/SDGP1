@@ -212,7 +212,8 @@ submitBtn.addEventListener("click", () => {
 
 function passingArray() {
   console.log("button run");
-  testing2 = ["a", "b", "b", "c", "c", "d", "c", "c", "b", "d", "b", "b"];
+
+  // testing2 = outputs;
 
   var MLinputs = new Array(12);
 
@@ -319,9 +320,9 @@ function passingArray() {
     console.log(element);
   });
 
-  const firstname = testing3;
+  const prediction = MLinputs;
 
-  const dict_values = { firstname }; //Pass the javascript variables to a dictionary.
+  const dict_values = { prediction }; //Pass the javascript variables to a dictionary.
   const s = JSON.stringify(dict_values); // Stringify converts a JavaScript object or value to a JSON string
   console.log(s); // Prints the variables to console window, which are in the JSON format
   window.alert(s);
