@@ -19,7 +19,7 @@
     /* font-family:system-ui, -apple-system, BlinkMac SystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
 }
 *{
-    background: url(./images/image12.avif)no-repeat;
+    /* background: url(./images/image9.jpeg)no-repeat; */
 
     margin: 0;
     padding: 0;
@@ -29,7 +29,7 @@
 
 body{
     position: relative;
-    background: url(./images/image12.avif)no-repeat;
+    background: url(./images/image9.jpeg)no-repeat;
     /* position: relative; */
     min-width:100%;
     min-height: 100vh;
