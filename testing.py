@@ -28,7 +28,12 @@ def test():
 
     with open('model_pickle_final.h5','rb') as f:
      mod =  pickle.load(f)
-    
+     
+    # myarray = [2, 1, 1, 2, 2, 3, 2, 1, 1, 2, 1, 1]
+    # myarray = [4,0,0,2,1,1,3,1,0,3,0,1] 
+    # 3	0	0	2	2	4	2	2	1	2	0	1
+
+    # print(myarray)
     test = mod.predict([firstValue])
     print(test)
     
@@ -36,7 +41,7 @@ def test():
 
 
 if __name__ == "__main__":
-    app.run(port= 3000, debug=True)
+    app.run(port= 4000, debug=True)
   
    
 # test = mod.predict([output])
