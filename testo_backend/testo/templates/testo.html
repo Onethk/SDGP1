@@ -40,10 +40,27 @@
                     </ul>
             </div>
         </div>
-    </nav><!--Testimonials-------------------------->
+    </nav>
+
+    <!--Testimonials-------------------------->
    <section id="testimonials">
 
       <div class="testimonials-box-container">
+
+          <!--Printing out the flash message -->
+          {% with message = get_flashed_messages() %}
+          {% if message %}
+          {% for message in message %}
+
+          <!--Bootstrap the success message-->
+          <div class = "alert alert-success alert-dismissible fade show" role="alert">
+              {{message}}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"> </button>
+          </div>
+
+          {%endfor%}
+          {%endif%}
+          {%endwith%}
 
          <div class="testimonial-box">
 
@@ -179,10 +196,18 @@
          </div>
       </div>
 
-          <div class = "textarea">
+
+          <div class = "feedbackInfo">
               <form action="{{url_for('insert')}}" class = "form" method="POST">
-              <textarea id = "feedback" name = "feedback" placeholder="Enter your feedback here"></textarea>
-              <input id = "submit" type = submit>
+                  <label for="fName">Firstname:</label>
+                  <input type = "text" id = "fName" name = "fName" placeholder="Enter your firstname here">
+
+                  <label for="sName">Surname:</label>
+                  <input type="text" id="sName" name="sName" placeholder="Enter your surname here">
+
+                  <textarea id = "feedback" name = "feedback" placeholder="Enter your feedback here"></textarea>
+
+                  <input id = "submit" type = submit>
               </form>
           </div>
 

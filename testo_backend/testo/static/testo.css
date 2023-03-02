@@ -138,6 +138,30 @@ a{
         }
 
 
+#fName{
+    padding-top: 20px;
+    width: 250px;
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+    background-color:#8fcbf0;
+    /* background-color: white; */
+    padding: 10px;
+    margin: 15px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+#sName{
+    padding-top: 20px;
+    width: 250px;
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+    background-color:#8fcbf0;
+    /* background-color: white; */
+    padding: 10px;
+    margin: 15px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
 #feedback{
     padding-top: 20px;
     width: 500px;
@@ -161,3 +185,4 @@ a{
     justify-content: center;
     align-items: center;
 }
+
