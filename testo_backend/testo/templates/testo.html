@@ -62,141 +62,45 @@
           {%endif%}
           {%endwith%}
 
-         <div class="testimonial-box">
+          <!--Looping to get the row from the database table to display-->
+          {% for row in testimonials %}
+          <div class="testimonial-box">
 
-         <div class="box-top">
+              <div class="box-top">
 
-               <div class="profile">
+                  <div class="profile">
 
-               <div class="profile-img">
-                     <img src="static/images/user1.jpg"/>
+                      <div class="profile-img">
+                          <img src="static/images/user1.jpg"/>
+                      </div>
+
+                      <div class="name-user">
+                          <!--Displaying row 1 and 2, Full name -->
+                          <strong>{{ row.1 }} {{ row.2}}</strong>
+                          <!--Displaying row 4, Date -->
+                          <span>{{row.4}}</span>
+                      </div>
                   </div>
-                  
-                  <div class="name-user">
-                     <strong>Darren Paxton</strong>
-                     <span>@darrenpax98</span>
+
+                  <div class="reviews">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
                   </div>
-               </div>
 
-               <div class="reviews">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-               </div>
+              </div>
 
-            </div>
-            
-            <div class="client-comments">
-               <p>An amazing adequate app for the satisfactory of below average students to a better position</p>
-            </div>
-         </div>
+              <div class="client-comments">
+                  <!--Displaying row 3, Feedback -->
+                  <p>{{row.3}}</p>
+              </div>
+          </div>
       </div>
+       {% endfor %}
 
-
-      <div class="testimonials-box-container">
-
-         <div class="testimonial-box">
-
-         <div class="box-top">
-
-               <div class="profile">
-
-               <div class="profile-img">
-               <img src="static/images/user2.jpeg"/>
-                  </div>
-                  
-                  <div class="name-user">
-                     <strong>Darren Paxton</strong>
-                     <span>@darrenpax98</span>
-                  </div>
-               </div>
-
-               <div class="reviews">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-regular fa-star"></i><!---Empty star-->
-                  <i class="fa-regular fa-star"></i><!---Empty star-->
-               </div>
-
-            </div>
-            
-            <div class="client-comments">
-               <p>An amazing adequate app for the satisfactory of below average students to a better position</p>
-            </div>
-         </div>
-      </div>
-
-      <div class="testimonials-box-container">
-
-         <div class="testimonial-box">
-
-         <div class="box-top">
-
-               <div class="profile">
-
-               <div class="profile-img">
-                  <img src="static/images/user4.avif"/>
-                  </div>
-                  
-                  <div class="name-user">
-                     <strong>Darren Paxton</strong>
-                     <span>@darrenpax98</span>
-                  </div>
-               </div>
-
-               <div class="reviews">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-               </div>
-
-            </div>
-            
-            <div class="client-comments">
-               <p>An amazing adequate app for the satisfactory of below average students to a better position</p>
-            </div>
-         </div>
-      </div>
-      <div class="testimonials-box-container">
-
-         <div class="testimonial-box">
-
-         <div class="box-top">
-
-               <div class="profile">
-
-               <div class="profile-img">
-                     <img src="static/images/user3.jpeg"/>
-                  </div>
-                  
-                  <div class="name-user">
-                     <strong>Darren Paxton</strong>
-                     <span>@darrenpax98</span>
-                  </div>
-               </div>
-
-               <div class="reviews">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-               </div>
-
-            </div>
-            
-            <div class="client-comments">
-               <p>An amazing adequate app for the satisfactory of below average students to a better position</p>
-            </div>
-         </div>
-      </div>
-
-
+       <!--Getting the feedback from user -->
           <div class = "feedbackInfo">
               <form action="{{url_for('insert')}}" class = "form" method="POST">
                   <label for="fName">Firstname:</label>
@@ -210,6 +114,8 @@
                   <input id = "submit" type = submit>
               </form>
           </div>
+
+
 
     </section>
 

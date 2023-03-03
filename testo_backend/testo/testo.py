@@ -1,4 +1,5 @@
 import datetime as datetime
+
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_mysqldb import MySQL
 
@@ -19,7 +20,15 @@ mysql = MySQL(app)
 
 @app.route('/')
 def index():
-    return render_template('testo.html')
+
+    # Retrieving data from the database
+    cur = mysql.connection.cursor()
+    # Selects the feedback randomly and limits the number of feedback to be displayed as 5
+    cur.execute("SELECT * FROM testimonials ORDER BY RAND() LIMIT 5")
+    data = cur.fetchall()
+    cur.close()
+
+    return render_template('testo.html', testimonials=data)
 
 
 # Insert the User's name, feedback and date into database
