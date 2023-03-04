@@ -65,7 +65,6 @@
           <!--Looping to get the row from the database table to display-->
           {% for row in testimonials %}
           <div class="testimonial-box">
-
               <div class="box-top">
 
                   <div class="profile">
@@ -86,6 +85,13 @@
                   {% for star in range(row.4) %}
                   <div class="reviews">
                       <i class="fa-solid fa-star"></i>
+                  </div>
+                  {%endfor%}
+
+
+                  {% for star in range(5 - row.4) %}
+                  <div class="reviews">
+                      <i class="fa-sharp fa-regular fa-star"></i>
                   </div>
                   {%endfor%}
 

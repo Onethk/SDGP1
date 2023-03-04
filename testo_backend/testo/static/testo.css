@@ -93,7 +93,7 @@ a{
     font-size:0.8rem;
 }
 .reviews{
-    color: #f9d71c;
+    color: #ffe234;
 }
 .box-top{
     display:flex;
@@ -218,7 +218,7 @@ a{
 .star{
     font-size: 3rem;
     padding: 10px;
-    color: #F9A406;
+    color: #ffe234;
     background-color: unset;
     border:none;
 }
@@ -226,4 +226,5 @@ a{
 .star:hover{
     cursor: pointer;
 }
+
 
