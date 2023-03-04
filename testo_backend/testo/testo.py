@@ -41,11 +41,12 @@ def insert():
         first_name = request.form['fName']
         surname = request.form['sName']
         feedback = request.form['feedback']
+        rating = request.form['rating']
         date = datetime.date.today()
 
         cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO testimonials (firstname, surname, feedback, date ) VALUES (%s, %s, %s, %s)",
-                    (first_name, surname, feedback, date,))
+        cur.execute("INSERT INTO testimonials (firstname, surname, feedback, starRating, date) VALUES (%s, %s, %s, %s, %s)",
+                    (first_name, surname, feedback, rating, date,))
         mysql.connection.commit()
         return redirect(url_for('index'))
 

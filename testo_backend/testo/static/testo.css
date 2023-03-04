@@ -88,19 +88,19 @@ a{
     font-size: 1.1rem;
     letter-spacing: 0.5px;
   }  
-  .name-user span{
+.name-user span{
     color:black;
     font-size:0.8rem;
-  }
-  .reviews{
+}
+.reviews{
     color: #f9d71c;
-  }
-  .box-top{
+}
+.box-top{
     display:flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px; 
-  }
+}
   .client-comment p{
      font-size: 0.9rem;
      color: black;    
@@ -184,5 +184,46 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.feedbackRate{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+    background-color: rgba(255,255,255,0.8);
+    border-radius: .4rem;
+    user-select: none;
+    padding: 1rem 2.5rem;
+    margin: 2rem;
+
+}
+
+#rateHeading{
+    color:black;
+    font-size: 30px;
+}
+
+#currentRate{
+    color:black;
+    font-size: 20px;
+}
+.starRating{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    user-select: none;
+}
+
+.star{
+    font-size: 3rem;
+    padding: 10px;
+    color: #F9A406;
+    background-color: unset;
+    border:none;
+}
+
+.star:hover{
+    cursor: pointer;
 }
 

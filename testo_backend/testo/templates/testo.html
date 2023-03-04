@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -78,17 +78,16 @@
                           <!--Displaying row 1 and 2, Full name -->
                           <strong>{{ row.1 }} {{ row.2}}</strong>
                           <!--Displaying row 4, Date -->
-                          <span>{{row.4}}</span>
+                          <span>{{row.5}}</span>
                       </div>
                   </div>
 
+                  <!-- Loop to print the number of stars given as feedback -->
+                  {% for star in range(row.4) %}
                   <div class="reviews">
                       <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
                   </div>
+                  {%endfor%}
 
               </div>
 
@@ -100,8 +99,22 @@
       </div>
        {% endfor %}
 
+       <!-- Displaying stars -->
+       <div class="feedbackRate">
+           <p id="rateHeading">Rate the website experience</p>
+           <div class="starRating" >
+               <button class="star">&#9734;</button>
+               <button class="star">&#9734;</button>
+               <button class="star">&#9734;</button>
+               <button class="star">&#9734;</button>
+               <button class="star">&#9734;</button>
+           </div>
+           <p id="currentRate">0 of 5</p>
+       </div>
+
        <!--Getting the feedback from user -->
           <div class = "feedbackInfo">
+
               <form action="{{url_for('insert')}}" class = "form" method="POST">
                   <label for="fName">Firstname:</label>
                   <input type = "text" id = "fName" name = "fName" placeholder="Enter your firstname here">
@@ -109,15 +122,17 @@
                   <label for="sName">Surname:</label>
                   <input type="text" id="sName" name="sName" placeholder="Enter your surname here">
 
+                  <input type="hidden" id="rating" name="rating" readonly>
+
                   <textarea id = "feedback" name = "feedback" placeholder="Enter your feedback here"></textarea>
 
                   <input id = "submit" type = submit>
               </form>
           </div>
 
-
-
     </section>
+
+    <script src = "static/testo.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
