@@ -14,7 +14,9 @@ app = Flask(__name__)
 def home():   
     return render_template('homepage.html')
 
-
+@app.route('/quiz')
+def quiz():   
+    return render_template('quiz.html')
 
 def index():
     return render_template('quiz.php')
