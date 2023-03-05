@@ -336,5 +336,9 @@ function passingArray() {
     type: "POST",
     contentType: "application/json",
     data: JSON.stringify(s),
+  }).then((data) => {
+    // Display the predicted emotion on the web page
+    emotionDisplay.textContent = "Predicted mark range: " + data.arr_str;
+    console.log("mark range prediction received from backend: " + data.arr_str);
   });
 }
