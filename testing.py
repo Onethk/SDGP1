@@ -18,6 +18,10 @@ def home():
 def quiz():   
     return render_template('quiz.html')
 
+@app.route('/tips')
+def tips():
+    return render_template('tips.html')
+
 def index():
     return render_template('quiz.php')
 
