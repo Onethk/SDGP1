@@ -10,6 +10,11 @@ from flask import Flask, render_template, jsonify
 app = Flask(__name__)
 
 @app.route('/')
+@app.route('/')
+def home():   
+    return render_template('homepage.html')
+
+
 
 def index():
     return render_template('quiz.php')
