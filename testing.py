@@ -22,6 +22,10 @@ def quiz():
 def tips():
     return render_template('tips.html')
 
+@app.route('/testo')
+def testo():
+    return render_template('testo1.html')
+
 def index():
     return render_template('quiz.php')
 
