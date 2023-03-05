@@ -11,7 +11,7 @@ if(predOut=="0 to 39"){
 }else(predOut=="70 to 79" || predOut=="80 to 89" || predOut=="90 to 100")
     tipMarkRange=100;
 
-    
+//tips
 var tip1 ="if mark range is less than 40";
 var tip2 ="if mark range is less than 70";
 var tip3 ="if mark range is more than 70";
@@ -23,3 +23,42 @@ var tip8 ="if spend more than 2 hours in social media";
 var tip9 ="if spend too much time on extra curricular acts";
 var tip10 ="if spare too much time on relationships";
 var tip11 ="if no friends to get help on studies";
+
+//create tips array depend on behaviours
+if(tipMarkRange==39){
+    tipsArr.push(tip1);
+}else if(tipMarkRange==69){
+    tipsArr.push(tip2);
+}else{
+    tipsArr.push(tip3);
+}
+
+if(passArr[5]==2){
+    tipsArr.push(tip4);
+}else if(passArr[5]==1){
+    tipsArr.push(tip5);
+}
+
+if(passArr[6]==1 || passArr[6]==3){
+    tipsArr.push(tip6);
+}
+
+if(passArr[7]==1 || passArr[7]==3){
+    tipsArr.push(tip7);
+}
+
+if(passArr[9]==3){
+    tipsArr.push(tip8);
+}
+
+if(passArr[10]==1){
+    tipsArr.push(tip9);
+}
+
+if(passArr[2]==1){
+    tipsArr.push(tip10);
+}
+
+if(passArr[8]==0){
+    tipsArr.push(tip11);
+}
