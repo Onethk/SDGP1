@@ -1,9 +1,11 @@
 import pickle
 import json
 
+import numpy as np
+
 from flask import request
 
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 
 app = Flask(__name__)
 
@@ -37,7 +39,14 @@ def test():
     test = mod.predict([firstValue])
     print(test)
     
-    return result
+    arr_str = np.array2string(temp)
+
+    # Print string representation of numpy array
+    print(type(arr_str))
+    
+    return jsonify({'arr_str':arr_str})
+    # return render_template('quiz.html', arr_str=arr_str)
+    # return result
 
 
 if __name__ == "__main__":
