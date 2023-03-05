@@ -50,8 +50,8 @@ def test():
     # 3	0	0	2	2	4	2	2	1	2	0	1
 
     # print(myarray)
-    test = mod.predict([firstValue])
-    print(test)
+    temp = mod.predict([firstValue])
+    print(temp)
     
     arr_str = np.array2string(temp)
 
