@@ -1,16 +1,32 @@
 import pickle
 import json
 
+import numpy as np
+
 from flask import request
 
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 
 app = Flask(__name__)
 
 @app.route('/')
+@app.route('/')
+def home():   
+    return render_template('homepage.html')
 
-def index():
-    return render_template('quiz.php')
+@app.route('/quiz')
+def quiz():   
+    return render_template('quiz.html')
+
+@app.route('/tips')
+def tips():
+    return render_template('tips.html')
+
+@app.route('/testo')
+def testo():
+    return render_template('testo1.html')
+
+
 
 @app.route('/test', methods=['POST'])
 def test():
@@ -34,10 +50,17 @@ def test():
     # 3	0	0	2	2	4	2	2	1	2	0	1
 
     # print(myarray)
-    test = mod.predict([firstValue])
-    print(test)
+    temp = mod.predict([firstValue])
+    print(temp)
+    #test comment added 
+    arr_str = np.array2string(temp)
+
+    # Print string representation of numpy array
+    print(type(arr_str))
     
-    return result
+    return jsonify({'arr_str':arr_str})
+    # return render_template('quiz.html', arr_str=arr_str)
+    # return result
 
 
 if __name__ == "__main__":
