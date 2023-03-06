@@ -52,7 +52,7 @@ def test():
     # print(myarray)
     temp = mod.predict([firstValue])
     print(temp)
-    
+    #test comment added 
     arr_str = np.array2string(temp)
 
     # Print string representation of numpy array
