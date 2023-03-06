@@ -76,3 +76,27 @@ document.getElementById("tipLine2").innerHTML+=tipsArr[1];
 document.getElementById("tipLine3").innerHTML+=tipsArr[2];
 document.getElementById("tipLine4").innerHTML+=tipsArr[3];
 document.getElementById("tipLine5").innerHTML+=tipsArr[4];
+
+let text0 = document.getElementById("itext0");
+let text1 = document.getElementById("itext1");
+let text2 = document.getElementById("itext2");
+let text3 = document.getElementById("itext3");
+let text4 = document.getElementById("itext4");
+
+// text4.style.display = "none";
+
+if(tipsArr[0] == " "){
+    text4.style.display = "none";
+}
+if(tipsArr[1] == " "){
+    text4.style.display = "none";
+}
+if(tipsArr[2] == " "){
+    text4.style.display = "none";
+}
+if(tipsArr[3] == " "){
+    text4.style.display = "none";
+}
+if(tipsArr[4] == " "){
+    text4.style.display = "none";
+}
