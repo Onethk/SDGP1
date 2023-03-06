@@ -62,3 +62,17 @@ if(passArr[2]==1){
 if(passArr[8]==0){
     tipsArr.push(tip11);
 }
+
+//
+if(tipsArr.length<5){
+    var emptys=5-tipsArr.length;
+    for(var x=0;x<emptys;x++){
+        tipsArr.push(" ");
+    }
+}
+
+document.getElementById("tipLine1").innerHTML+=tipsArr[0];
+document.getElementById("tipLine2").innerHTML+=tipsArr[1];
+document.getElementById("tipLine3").innerHTML+=tipsArr[2];
+document.getElementById("tipLine4").innerHTML+=tipsArr[3];
+document.getElementById("tipLine5").innerHTML+=tipsArr[4];
