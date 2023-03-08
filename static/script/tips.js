@@ -1,7 +1,20 @@
-var predOut = data.arr_str; //recieve predicted mark range
-var passArr = testing3; //recieve behaviour array
+//get prediction h1 tag
+var pretester= document.getElementById("predouter");
+//get textcontent of tag
+pretester= pretester.textContent;
+console.log(pretester);
+//get prediction string only
+var pretester= pretester.substring(1, pretester.length-1)
+console.log(pretester);
+
+var predOut = pretester;
+console.log(predOut);
+
+var behavArray=document.getElementById("behavOuter");
+console.log(behavArray.textContent);
+var passArr = behavArray.textContent;
 var tipMarkRange;
-var tipsArr=[];
+var tipsArr = [];
 
 //set ranges to predicted marks
 if(predOut=="0 to 39"){
