@@ -1,4 +1,4 @@
-var markdisplay = document.querySelector("#mark-display");
+var markDisplay = document.querySelector("#mark-display");
 const quizData = [
   {
     question: "Time taken to travel to the university?",
