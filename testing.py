@@ -8,6 +8,7 @@ from flask import request
 from flask import Flask, render_template, jsonify
 
 app = Flask(__name__)
+app.secret_key = 'secret_key'
 
 @app.route('/')
 
@@ -17,10 +18,6 @@ def home():
 @app.route('/quiz')
 def quiz():   
     return render_template('quiz.html')
-
-@app.route('/tips')
-def tips():
-    return render_template('tips.html')
 
 @app.route('/testo')
 def testo():
@@ -45,10 +42,6 @@ def test():
     with open('model_pickle_final.h5','rb') as f:
      mod =  pickle.load(f)
      
-    # myarray = [2, 1, 1, 2, 2, 3, 2, 1, 1, 2, 1, 1]
-    # myarray = [4,0,0,2,1,1,3,1,0,3,0,1] 
-    # 3	0	0	2	2	4	2	2	1	2	0	1
-
     # print(myarray)
     temp = mod.predict([firstValue])
     print(temp)
@@ -61,6 +54,16 @@ def test():
     return jsonify({'arr_str':arr_str})
     # return render_template('quiz.html', arr_str=arr_str)
     # return result
+
+@app.route('/tips')
+def tips():
+    mark = session.pop('mark', None)
+    print(mark)
+    
+
+    behav_Arr= session.pop('behav_Arr',None)
+    print(behav_Arr)
+    return render_template('tips.html', mark=mark, behav_Arr=behav_Arr)
 
 
 if __name__ == "__main__":
