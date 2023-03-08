@@ -19,8 +19,8 @@ def home():
 def quiz():   
     return render_template('quiz.html')
 
-@app.route('/testo')
-def testo():
+@app.route('/testo1')
+def testo1():
     return render_template('testo1.html')
 
 
