@@ -199,13 +199,8 @@ submitBtn.addEventListener("click", () => {
       qizBRemove.remove();
       var qizRemove = document.getElementById("head");
       qizRemove.remove();
-      document.getElementById("quiz").innerHTML += "Input data to ML model :";
-      for (i = 0; i < outputs.length; i++) {
-        document.getElementById("quiz").innerHTML += outputs[i] + " , ";
-      }
-
       document.getElementById("quiz").innerHTML +=
-        "<button onclick='passingArray()'> View tips n tricks</button>";
+        "<button onclick='passingArray()' id='viewPred'> View My Predicted Result</button>";
     }
   }
   console.log(outputs);
@@ -331,7 +326,7 @@ function passingArray() {
   const dict_values = { prediction }; //Pass the javascript variables to a dictionary.
   const s = JSON.stringify(dict_values); // Stringify converts a JavaScript object or value to a JSON string
   console.log(s); // Prints the variables to console window, which are in the JSON format
-  window.alert(s);
+  
   $.ajax({
     url: "/test",
     type: "POST",
@@ -342,4 +337,9 @@ function passingArray() {
     emotionDisplay.textContent = "Predicted mark range: " + data.arr_str;
     console.log("mark range prediction received from backend: " + data.arr_str);
   });
+
+  var Predview = document.getElementById("viewPred");
+  Predview.remove();
+  document.getElementById("quiz").innerHTML +="<button onclick='window.location.href = '{{url_for('tips')}}';'>View tips and tricks</button>";
+
 }
