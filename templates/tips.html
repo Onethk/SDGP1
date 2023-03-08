@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../static/styles/tips.css">
 
 
-    <title>Document</title>
+    <title>Tips and Tricks</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg">
@@ -25,17 +25,18 @@
                         <a class="nav-link" href="{{url_for('tips')}}">Tips n Tricks</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="testo1.php">Testomonials</a>
-                        </li>
-                        
-                            
-                        </ul>
+                        <a class="nav-link" aria-current="page" href="{{url_for('testo1')}}">Testomonials</a>
+                        </li>      
+                    </ul>
                 </div>
             </div>
         </nav>
         <!-- <div class = "heading">
             <h1>Tips & Tricks</h1>
         </div> -->
+        <h1 id="predouter">{{mark}}</h1>
+        <h1 id="behavOuter">{{behav_Arr}}</h1>
+
         <div class ="container">
             <ul>   
             <div id="itext0" class = "text1">
