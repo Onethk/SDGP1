@@ -1,11 +1,11 @@
 import pickle
 import json
-
+import sys
 import numpy as np
 
 from flask import request
 
-from flask import Flask, render_template, jsonify
+from flask import Flask,session, request, render_template, jsonify
 
 app = Flask(__name__)
 app.secret_key = 'secret_key'
@@ -50,6 +50,9 @@ def test():
 
     # Print string representation of numpy array
     print(type(arr_str))
+
+    session['mark'] = arr_str
+    session['behav_Arr']=firstValue
     
     return jsonify({'arr_str':arr_str})
     # return render_template('quiz.html', arr_str=arr_str)
