@@ -1,4 +1,4 @@
-var emotionDisplay = document.querySelector("#emotion-display");
+var markdisplay = document.querySelector("#mark-display");
 const quizData = [
   {
     question: "Time taken to travel to the university?",
