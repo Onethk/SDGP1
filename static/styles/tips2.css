@@ -65,7 +65,7 @@ li
     list-style: none;
 }
 
-.container .text
+.container .text1, .text2, .text3, .text4, .text5
 {
     display: flex;
     width:  500px;
@@ -144,4 +144,9 @@ li
     border-radius: 50%;
     margin-right: 10px;
     font-size: 20px;
+}
+
+#testButton{
+    position: relative;
+    right: 20%;
 }
