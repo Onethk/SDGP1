@@ -341,6 +341,6 @@ function passingArray() {
 
   var Predview = document.getElementById("viewPred");
   Predview.remove();
-  document.getElementById("quiz").innerHTML +="<button onclick='window.location.href = '{{url_for('tips')}}';'>View tips and tricks</button>";
-
+  document.getElementById("tipsBtn").style.visibility= "visible";
 }
+
