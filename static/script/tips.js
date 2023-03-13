@@ -1,10 +1,13 @@
 //get prediction h1 tag
 var pretester = document.getElementById("predouter");
+
 //get textcontent of tag
 pretester = pretester.textContent;
+
 console.log(pretester);
 //get prediction string only
 var pretester = pretester.substring(1, pretester.length - 1);
+
 console.log(pretester);
 
 var predOut = pretester;
@@ -21,6 +24,7 @@ console.log(typeof passArr);
 var base = passArr.split(",").map(function (item) {
   return parseInt(item, 10);
 });
+
 console.log("base" + base);
 console.log(typeof base);
 passArr = base;
@@ -42,20 +46,18 @@ tipMarkRange = 100;
 
 //tips
 var tip1 =
-  "Should Improve on majority of the subjects where the student is weak ";
+  "Should improve on majority of the subjects where the student is weak ";
 var tip2 =
   "Can do better as the first classes are in boundaries . Keep on repeated learning!";
 var tip3 = "Revise more on practice papers";
-var tip4 = "Don’t procrastinate ";
+var tip4 = "Do not procrastinate ";
 var tip5 = "Avoid distractions";
 var tip6 =
-  "Atleast watch out the missed lectures recordings for a better understanding";
+  "Watch out the missed lectures recordings for a better understanding";
 var tip7 =
   "Watch YouTube videos or different education platforms according to ur comfort zone";
-var tip8 =
-  "Keep the phone on do not disturb mode or put it on silent , too many notifications from social media can distract your focus immediately for long hours where you feel demotivated to the maximum";
-var tip9 =
-  "Keep halt for it , for a while and spend less time on extra circular and more on studies ";
+var tip8 = "Keep the phone on do not disturb mode or put it on silent";
+var tip9 = "Spend more time on studies than extra-curricular activities ";
 var tip10 = "Move to a calm place like a library where you feel only to study";
 var tip11 = "Seek help from online Web-sites";
 

@@ -141,8 +141,7 @@ def test():
     session['behav_Arr']=firstValue
     
     return jsonify({'arr_str':arr_str})
-    # return render_template('quiz.html', arr_str=arr_str)
-    # return result
+    
 
 @app.route('/tips')
 def tips():
@@ -158,4 +157,4 @@ def tips():
 
 
 if __name__ == "__main__":
-    app.run(port= 8000, debug=True)
+    app.run(port= 3000, debug=True)
