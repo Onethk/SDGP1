@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../static/styles/register.css">
+</head>
+<body>
+
+
+    <div class="container">
+        <div id="form">
+            <h1 id="register-h1">Register Account</h1>
+
+            <form method="POST" action="" id="form-inside">
+                {{ form.hidden_tag() }}
+                {{ form.username }}
+                <br><br>
+                {{ form.password }}
+                <br>
+                <div class="reg">
+                    {{ form.submit }} 
+                </div>
+                
+                  
+            </form>
+            <button id="loginButton">
+                <a href="{{url_for('login')}}">Already have an account? Log In</a>
+            </button>
+            
+        
+        </div>  
+        
+        <div>
+            <img src="../static/styles/images/image8.avif" alt="" height=450px width=450px class="imageClass">
+        </div>
+
+    </div>
+   
+
+
+    
+
+    
+
+    
+    
+</body>
+</html>
