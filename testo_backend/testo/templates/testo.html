@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+      <!--Swiper -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -16,7 +18,6 @@
   </head>
 
   <body>
-
 
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
@@ -35,8 +36,8 @@
                         <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="testo1.php">Testomonials</a>
                         </li>
-                        
-                        
+
+
                     </ul>
             </div>
         </div>
@@ -45,9 +46,7 @@
     <!--Testimonials-------------------------->
    <section id="testimonials">
 
-      <div class="testimonials-box-container">
-
-          <!--Printing out the flash message -->
+       <!--Printing out the flash message -->
           {% with message = get_flashed_messages() %}
           {% if message %}
           {% for message in message %}
@@ -62,48 +61,50 @@
           {%endif%}
           {%endwith%}
 
-          <!--Looping to get the row from the database table to display-->
-          {% for row in testimonials %}
-          <div class="testimonial-box">
-              <div class="box-top">
-
-                  <div class="profile">
-
-                      <div class="profile-img">
-                          <img src="static/images/user1.jpg"/>
-                      </div>
-
-                      <div class="name-user">
-                          <!--Displaying row 1 and 2, Full name -->
-                          <strong>{{ row.1 }} {{ row.2}}</strong>
-                          <!--Displaying row 4, Date -->
-                          <span>{{row.5}}</span>
-                      </div>
-                  </div>
-
-                  <!-- Loop to print the number of stars given as feedback -->
-                  {% for star in range(row.4) %}
-                  <div class="reviews">
-                      <i class="fa-solid fa-star"></i>
-                  </div>
-                  {%endfor%}
+       <div class="swiper Swipe">
+           <div class="swiper-wrapper">
+               <!--Looping to get the row from the database table to display-->
+               {% for row in testimonials %}
+               <div class="swiper-slide">
+                   <div class="testimonial-box">
+                               <div class="quote-img">
+                                   <img src="static/images/right-quote.png"/>
+                               </div>
+                       <div class = "feedbackReviews">
+                               <div class="name-user">
+                                   <!--Displaying row 1 and 2, Full name -->
+                                   <strong>{{ row.1 }} {{ row.2}}</strong>
+                                   <!--Displaying row 4, Date -->
+                                   <span>{{row.5}}</span>
+                               </div>
 
 
-                  {% for star in range(5 - row.4) %}
-                  <div class="reviews">
-                      <i class="fa-sharp fa-regular fa-star"></i>
-                  </div>
-                  {%endfor%}
+                           <!-- Loop to print the number of stars given as feedback -->
+                           {% for star in range(row.4) %}
+                           <div class="reviews">
+                               <i class="fa-solid fa-star"></i>
+                           </div>
+                           {%endfor%}
 
-              </div>
+                           {% for star in range(5 - row.4) %}
+                           <div class="reviews">
+                               <i class="fa-sharp fa-regular fa-star"></i>
+                           </div>
+                           {%endfor%}
 
-              <div class="client-comments">
-                  <!--Displaying row 3, Feedback -->
-                  <p>{{row.3}}</p>
-              </div>
-          </div>
-      </div>
-       {% endfor %}
+                       <div class="client-comments">
+                           <!--Displaying row 3, Feedback -->
+                           <p>{{row.3}}</p>
+                       </div>
+                       </div>
+                   </div>
+
+               </div>
+               {% endfor %}
+           </div>
+           <div class="swiper-pagination"></div>
+       </div>
+
 
        <!-- Displaying stars -->
        <div class="feedbackRate">
@@ -138,10 +139,12 @@
 
     </section>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <!-- .js linked -->
     <script src = "static/testo.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 
   </body>
-</html>    
+</html>

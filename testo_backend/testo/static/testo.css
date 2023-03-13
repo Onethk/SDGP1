@@ -32,49 +32,33 @@ body{
 }
 a{
    text-decoration: none;
-}  
-#testimonials{
-    /* background: url(./images/image10.avif)no-repeat; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction:column;
-    width: 100%;
-    
 }
 
-.testimonial-box-container{
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100% ;
-}
 .testimonial-box{
-    padding-top: 20px;
-    width: 500px;
-    box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
-    background-color:#8fcbf0;
-    /* background-color: white; */
-    padding: 20px;
-    margin: 15px;
-    cursor: pointer;
-    border-radius: 30px;
-
+    position: relative;
+    width:100%;
+    padding: 40px;
 }
-.profile-img{
+
+.quote-img{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    opacity: 0.3;
     width: 50px;
     height: 50px;
-    border-radius: 50%;
     overflow:hidden;
     margin-right: 10px;
+    bottom:0px;
 }
-.profile-img img{ 
+
+.quote-img img{
     width:100%;
     height:100%;
     object-fit: cover;
     object-position: center;
 }
+
 .profile{
     display: flex;
     align-items: center;
@@ -83,10 +67,13 @@ a{
     display: flex;
     flex-direction: column;
 }
-.name-user strong{
+.name-user{
     color: black;
-    font-size: 1.1rem;
-    letter-spacing: 0.5px;
+    font-size: 1.3rem;
+    font-weight:400px;
+    letter-spacing: 1px;
+    color: #21a9f3;
+    line-height: 1.5em;
   }  
 .name-user span{
     color:black;
@@ -95,16 +82,14 @@ a{
 .reviews{
     color: #ffe234;
 }
-.box-top{
-    display:flex;
-    justify-content: space-between;
+
+.client-comments {
+    display: flex;
     align-items: center;
-    margin-bottom: 20px; 
+    font-size: 0.9rem;
+    color: black;
+    margin-top: 20px;
 }
-  .client-comment p{
-     font-size: 0.9rem;
-     color: black;    
-  }
   .testimonial-box:hover{
     transform: translateY(-10px);
     transition: all ease 0.3s;
@@ -228,3 +213,17 @@ a{
 }
 
 
+.swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color:red;
+}
+
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 600px;
+    background-color:#fff;
+}

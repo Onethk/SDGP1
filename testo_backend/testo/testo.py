@@ -24,7 +24,7 @@ def index():
     # Retrieving data from the database
     cur = mysql.connection.cursor()
     # Selects the feedback randomly and limits the number of feedback to be displayed as 5
-    cur.execute("SELECT * FROM testimonials ORDER BY RAND() LIMIT 5")
+    cur.execute("SELECT * FROM testimonials ORDER BY RAND() LIMIT 6")
     data = cur.fetchall()
     cur.close()
 
