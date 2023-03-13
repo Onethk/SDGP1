@@ -3,6 +3,15 @@ import json
 import sys
 import numpy as np
 
+from flask import Flask, flash, render_template, url_for, redirect, request
+from flask_sqlalchemy import SQLAlchemy
+from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, SubmitField
+from wtforms.validators import InputRequired, Length, ValidationError
+from flask_bcrypt import Bcrypt
+
+import sqlite3
 from flask import request
 
 from flask import Flask,session, request, render_template, jsonify
@@ -10,7 +19,81 @@ from flask import Flask,session, request, render_template, jsonify
 app = Flask(__name__)
 app.secret_key = 'secret_key'
 
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+db = SQLAlchemy(app)
+bcrypt = Bcrypt(app)
+
+
 @app.route('/')
+def loginpage():
+    return render_template('login.html')
+ 
+@app.route('/', methods=['POST'])
+def login():
+    
+    username = request.form['username']
+    password = request.form['password']
+
+    conn = sqlite3.connect('database.db')
+    c = conn.cursor()
+
+    c.execute('SELECT * FROM user WHERE username=? AND password=?',(username, password))
+    row = c.fetchone()
+    
+    if row:
+        c1 = conn.cursor()
+        c1.execute('SELECT username, password FROM user WHERE username=? AND password=?',(username, password))
+        row1 = c1.fetchone()
+        username, password = row1
+
+        session['username'] = username
+
+        return redirect('/home')
+    
+    else:
+        
+        flash("Enter details are wrong! Please check again")
+        
+        return redirect('/')
+
+    return render_template('login.html')
+
+@app.route('/register')
+def signupPage():
+    return render_template('register.html')
+
+@app.route('/register', methods=['POST'])
+def register():
+    username = request.form['username']
+    password = request.form['password']
+
+    conn = sqlite3.connect('database.db')
+    c1 = conn.cursor()
+
+    c1.execute('SELECT username FROM user')
+    rows1 = c1.fetchall()
+
+    usernameHas = True
+    
+    usernames = [row1[0] for row1 in rows1]
+
+    for eachUsername in usernames:
+        if eachUsername == username:
+            usernameHas = False
+            flash("This username is already in use")
+            return redirect('/register')
+
+    if usernameHas:
+        c1.execute("INSERT INTO user (username, password) VALUES (?, ?)", (username, password))
+        conn.commit()
+        return render_template('login.html')
+
+    return render_template('register.html')
+
+
+
+
+@app.route('/home')
 def home():   
     return render_template('homepage.html')
 
@@ -21,6 +104,10 @@ def quiz():
 @app.route('/testo1')
 def testo1():
     return render_template('testo1.html')
+
+@app.route('/aboutUs')
+def aboutUs():
+    return render_template('aboutUs.html')
 
 #testcomment
 
@@ -68,9 +155,7 @@ def tips():
     return render_template('tips.html', mark=mark, behav_Arr=behav_Arr)
 
 
+
+
 if __name__ == "__main__":
-    app.run(port= 4000, debug=True)
-  
-   
-# test = mod.predict([output])
-# print(test); 
+    app.run(port= 8000, debug=True)

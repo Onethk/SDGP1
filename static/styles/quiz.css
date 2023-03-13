@@ -117,4 +117,27 @@ display: none;
   color: black;
 }
 
+#tipsBtn{
+  border-radius: 20px;
+  width: 300px;
+  position: relative;
+  bottom: 280px;
+  left: 450px;
+  
+}
 
+#tipsLink{
+  text-decoration: none;
+
+}
+
+#mark-display{
+      /* font-size: 300px; */
+      position: relative;
+      justify-content: center;
+      bottom: 320px;
+      font-size: 30px;
+      font-weight: bold;
+      font-family: cursive;
+      left: -200px;
+}

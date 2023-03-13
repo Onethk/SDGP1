@@ -200,7 +200,7 @@ submitBtn.addEventListener("click", () => {
       var qizRemove = document.getElementById("head");
       qizRemove.remove();
       document.getElementById("quiz").innerHTML +=
-        "<button onclick='passingArray()' id='viewPred'> View My Predicted Result</button>";
+        "<button onclick='passingArray()' id='viewPred'> View My Predicted Mark Range</button>";
     }
   }
   console.log(outputs);
@@ -326,21 +326,20 @@ function passingArray() {
   const dict_values = { prediction }; //Pass the javascript variables to a dictionary.
   const s = JSON.stringify(dict_values); // Stringify converts a JavaScript object or value to a JSON string
   console.log(s); // Prints the variables to console window, which are in the JSON format
-  
+
   $.ajax({
     url: "/test",
     type: "POST",
     contentType: "application/json",
     data: JSON.stringify(s),
-    success: function(data) {
+    success: function (data) {
       marks = data.arr_str;
       console.log(marks);
       markDisplay.textContent = "Predicted mark: " + marks;
-    }
+    },
   });
 
   var Predview = document.getElementById("viewPred");
   Predview.remove();
-  document.getElementById("tipsBtn").style.visibility= "visible";
+  document.getElementById("tipsBtn").style.visibility = "visible";
 }
-

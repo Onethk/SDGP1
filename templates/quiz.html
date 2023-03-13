@@ -27,11 +27,14 @@
                 <li class="nav-item">
                   <a class="nav-link" href="{{url_for('quiz')}}">Questions</a>
                   </li>
-                  <li class="nav-item">
+                  <!-- <li class="nav-item">
                   <a class="nav-link" href="{{url_for('tips')}}">Tips n Tricks</a>
-                  </li>
+                  </li> -->
                   <li class="nav-item">
                   <a class="nav-link" aria-current="page" href="{{url_for('testo1')}}">Testomonials</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{{url_for('aboutUs')}}">About Us</a>
                   </li>
              </ul>
             </div>
@@ -67,7 +70,7 @@
             </div>
 
         </div>
-        <button style="visibility:hidden;" id="tipsBtn"><a href="{{url_for('tips')}}">Tips and trick</a></button>
+        <button style="visibility:hidden;" id="tipsBtn"><a href="{{url_for('tips')}}" id="tipsLink">View Tips n Tricks</a></button>
         <div id="mark-display"></div>
         
       </div>

@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/styles/login.css">
+</head>
+<body>
+
+    <div class="container">
+        <div id="form">
+            <h1 id="register-h1">Login Account</h1>
+
+            <form method="POST" action="/" id="form-inside">
+                
+                <input type="text" name="username" placeholder="Username">
+                <br><br>
+                <input type="password" name="password" placeholder="Password">
+                <br><br>
+                <input type="submit" name="login" value="Login">
+
+                  
+            </form>
+
+            <button id="loginButton">
+                <a href="{{url_for('register')}}">Don't have an account? Sign Up</a>
+            </button>
+            
+        </div>  
+        
+        <div>
+            <img src="../static/styles/image8.avif" alt="" height=450px width=450px class="imageClass">
+        </div>
+
+    </div>
+
+
+</body>
+</html>
