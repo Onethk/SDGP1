@@ -43,7 +43,10 @@
       </div>
    </nav>
    <div>
-      <p>{{testo}}</p>
+      {{% for row1 in temp1 %}}
+      <p>{{row1.1}}</p>
+        {{%endfor%}}
+
       <p></p>
    </div>
    <div class="feedbackRate">

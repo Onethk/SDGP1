@@ -126,7 +126,7 @@ def testo1():
     conn.close()
 
     
-    return render_template('testo2.html', rows=rows)
+    return render_template('testo2.html', temp1=rows)
 
 
 
