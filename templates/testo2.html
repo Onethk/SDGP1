@@ -42,10 +42,9 @@
           </div>
       </div>
    </nav>
-   <div>    
-    <p>{{ rows[0]}}</p>
-    <p>{{ rows[1]}}</p>
-    <p>{{ rows[2]}}</p>
+   <div>   
+     
+
    </div>
    <div class="feedbackRate">
         <p id="rateHeading">Rate the website experience</p>
@@ -59,10 +58,13 @@
         <p id="currentRate">0 of 5</p>
     </div>
     <div>
-        <form action="" method="POST">
-            <textarea id = "feedback" name = "feedback" placeholder="Enter your feedback here"></textarea>
+        <form action="/testo1" method="POST">
+            <input type="text" name = "user1" placeholder="Enter username"></input>
+
+            <input type="text" name = "feedback" placeholder="Enter your feedback here"></input>
 
             <input id = "submit" type = submit>
         </form>
     </div>
+
   </body>

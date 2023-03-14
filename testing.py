@@ -125,10 +125,35 @@ def testo1():
     cursor.close()
     conn.close()
 
+    return render_template('testo2.html')
+
+@app.route('/testo1', methods=['POST'])
+def testoData():
+    feedback = request.form['feedback']
+    user1 = request.form['user1']
     
-    return render_template('testo2.html', rows=rows)
+    conn = sqlite3.connect('database.db')
+    c1 = conn.cursor()
+    
+    c1.execute('SELECT username FROM user')
+    rows1 = c1.fetchall()
 
+    usernameHas = False
+    
+    usernames = [row1[0] for row1 in rows1]
 
+    for eachUsername in usernames:
+        if eachUsername == user1:
+            usernameHas = True
+            
+    if usernameHas:
+        c1.execute("INSERT INTO testomonial (username, review) VALUES (?, ?)", (user1, feedback))
+        conn.commit()
+        
+
+    return render_template('testo2.html')
+    
+    
 
 @app.route('/aboutUs')
 def aboutUs():
