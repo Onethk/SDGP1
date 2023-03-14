@@ -24,6 +24,8 @@ db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 
 
+
+
 @app.route('/')
 def loginpage():
     return render_template('login.html')
@@ -101,7 +103,32 @@ def quiz():
 
 @app.route('/testo1')
 def testo1():
+    
+    # taking data from testo database
+
+    conn = sqlite3.connect('database.db')
+
+    # Create a cursor object
+    cursor = conn.cursor()
+
+    # Execute a SELECT query
+    cursor.execute('SELECT * FROM testomonial')
+
+    # Retrieve the data
+    rows = cursor.fetchall()
+
+    # Print the data
+    for row in rows:
+        print(row)
+
+    # Close the cursor and the database connection
+    cursor.close()
+    conn.close()
+    
     return render_template('testo1.html')
+
+
+
 
 @app.route('/aboutUs')
 def aboutUs():
