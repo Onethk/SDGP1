@@ -50,6 +50,19 @@
           <td>{{ row[1] }}</td>
           <!-- <td>{{ row[2] }}</td> -->
           <!-- add more columns as needed -->
+          <td>
+            {% for star in range(row[2]|int) %}
+            <div class="reviews">
+                <i class="fa-solid fa-star"></i>
+            </div>
+            {%endfor%}
+
+            {% for star in range(5 - (row[2]|int)) %}
+            <div class="reviews">
+                <i class="fa-sharp fa-regular fa-star"></i>
+            </div>
+            {%endfor%}
+          </td>
         </tr>
         {% endfor %}
       </table>
