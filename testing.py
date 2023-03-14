@@ -124,8 +124,9 @@ def testo1():
     # Close the cursor and the database connection
     cursor.close()
     conn.close()
+
     
-    return render_template('testo1.html')
+    return render_template('testo2.html', rows=rows)
 
 
 
@@ -161,10 +162,12 @@ def test():
 
     # Print string representation of numpy array
     print(type(arr_str))
-
+    
+    
     session['mark'] = arr_str
     session['behav_Arr']=firstValue
-    
+ 
+     
     return jsonify({'arr_str':arr_str})
     
 
