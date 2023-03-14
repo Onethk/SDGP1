@@ -43,8 +43,16 @@
       </div>
    </nav>
    <div>   
-     
-
+    <table>
+        {% for row in data %}
+        <tr>
+          <td>{{ row[0] }}</td>
+          <td>{{ row[1] }}</td>
+          <!-- <td>{{ row[2] }}</td> -->
+          <!-- add more columns as needed -->
+        </tr>
+        {% endfor %}
+      </table>
    </div>
    <div class="feedbackRate">
         <p id="rateHeading">Rate the website experience</p>
