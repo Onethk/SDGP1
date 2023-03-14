@@ -123,13 +123,14 @@ def testoData():
 
     username = session.get('username')
     feedback = request.form['feedback']
+    rating = request.form['rating']
     
     conn = sqlite3.connect('database.db')
     
     print(username)
     
     c = conn.cursor()
-    c.execute("INSERT INTO testomonial (username, review) VALUES (?, ?)", (username, feedback))
+    c.execute("INSERT INTO testomonial (username, review, rating) VALUES (?, ?, ?)", (username, feedback, rating))
     conn.commit()
 
     return redirect('/testo1')
