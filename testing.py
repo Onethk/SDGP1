@@ -104,54 +104,35 @@ def quiz():
 @app.route('/testo1')
 def testo1():
     
-    # taking data from testo database
-
     conn = sqlite3.connect('database.db')
 
-    # Create a cursor object
-    cursor = conn.cursor()
+    c = conn.cursor()
 
-    # Execute a SELECT query
-    cursor.execute('SELECT * FROM testomonial')
-
-    # Retrieve the data
-    rows = cursor.fetchall()
-
+    c.execute('SELECT * FROM testomonial')
+    # columns = [description[0] for description in c.description]
+    data = c.fetchall()
     # Print the data
-    for row in rows:
-        print(row)
+    # for row in data:
+    #     print(row)
 
-    # Close the cursor and the database connection
-    cursor.close()
-    conn.close()
+    return render_template('testo2.html', data=data)
 
-    return render_template('testo2.html')
 
-@app.route('/testo1', methods=['POST'])
+@app.route('/testo11', methods=['POST'])
 def testoData():
+
+    username = session.get('username')
     feedback = request.form['feedback']
-    user1 = request.form['user1']
     
     conn = sqlite3.connect('database.db')
-    c1 = conn.cursor()
     
-    c1.execute('SELECT username FROM user')
-    rows1 = c1.fetchall()
-
-    usernameHas = False
+    print(username)
     
-    usernames = [row1[0] for row1 in rows1]
+    c = conn.cursor()
+    c.execute("INSERT INTO testomonial (username, review) VALUES (?, ?)", (username, feedback))
+    conn.commit()
 
-    for eachUsername in usernames:
-        if eachUsername == user1:
-            usernameHas = True
-            
-    if usernameHas:
-        c1.execute("INSERT INTO testomonial (username, review) VALUES (?, ?)", (user1, feedback))
-        conn.commit()
-        
-
-    return render_template('testo2.html')
+    return redirect('/testo1')
     
     
 
@@ -204,8 +185,6 @@ def tips():
     behav_Arr= session.pop('behav_Arr',None)
     print(behav_Arr)
     return render_template('tips.html', mark=mark, behav_Arr=behav_Arr)
-
-
 
 
 if __name__ == "__main__":

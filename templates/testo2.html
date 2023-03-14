@@ -46,7 +46,7 @@
     <table>
         {% for row in data %}
         <tr>
-          <td>{{ row[0] }}</td>
+          <td style="padding:10px;">{{ row[0] }}</td>
           <td>{{ row[1] }}</td>
           <!-- <td>{{ row[2] }}</td> -->
           <!-- add more columns as needed -->
@@ -66,13 +66,15 @@
         <p id="currentRate">0 of 5</p>
     </div>
     <div>
-        <form action="/testo1" method="POST">
-            <input type="text" name = "user1" placeholder="Enter username"></input>
-
+        <form action="/testo11" method="POST">
+            <!-- <input type="text" name = "user1" placeholder="Enter username"></input> -->
+  
             <input type="text" name = "feedback" placeholder="Enter your feedback here"></input>
-
+  
             <input id = "submit" type = submit>
         </form>
+        
     </div>
+     
 
   </body>
