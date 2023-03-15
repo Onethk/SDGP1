@@ -227,3 +227,6 @@ a{
     width: 600px;
     background-color:#fff;
 }
+.reviews{
+    display: flex;
+}

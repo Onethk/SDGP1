@@ -111,11 +111,14 @@ def testo1():
     c.execute('SELECT * FROM testomonial')
     # columns = [description[0] for description in c.description]
     data = c.fetchall()
+    print(len(data))
+    print(type(data))
+    lenArr = len(data)
     # Print the data
     # for row in data:
     #     print(row)
 
-    return render_template('testo2.html', data=data)
+    return render_template('testo2.html', data=data, lenArr=lenArr)
 
 
 @app.route('/testo11', methods=['POST'])
