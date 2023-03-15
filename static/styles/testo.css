@@ -166,10 +166,6 @@ a{
     resize: none;
 }
 
-#submit{
-    border-radius: 20px;
-    width: 100px;
-}
 
 .form{
     display: flex;
@@ -198,7 +194,9 @@ a{
 
 #formD{
     position: relative;
-    
+    right: 20%;
+    bottom: 20px;
+
 }
 
 #currentRate{
@@ -211,11 +209,25 @@ a{
     align-items: center;
     user-select: none;
 }
+#sec1{
+    position: relative;
+    right: 16%;
+}
+#sec2{
+    position: relative;
+    left: 3%;
+}
+#hearHeading{
+    color:black;
+    font-size: 30px;
+    position: relative;
+    left: 20%;
+}
 
 .star{
-    font-size: 3rem;
+    font-size: 2rem;
     padding: 10px;
-    color: #ffe234;
+    color: #FFED00;
     background-color: unset;
     border:none;
 }
@@ -234,6 +246,11 @@ a{
     /* font-style:oblique; */
 }
 
+#reviewTable{
+    position: relative;
+    left: 17%;
+}
+
 .reviews{
     padding: 10px;
 }
@@ -245,11 +262,12 @@ a{
 
 #submitButton{
     display: flex;
-    width: 100px;
-    height: 40px;
+    width: 90px;
+    height: 35px;
     justify-content: center;
     position: relative;
     left: 47%;
+    bottom: 15px;
     background-color: #4B56D2;
     color: white;
     border-radius: 10px;
@@ -271,4 +289,86 @@ a{
 
     position: relative;
     bottom: 20px;
+}
+
+* footer */
+
+
+footer{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.containerF{
+    max-width: 100%;
+    padding-left: 24%;
+    
+}
+
+.rowF{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 30px;
+}
+
+.rowF ul{
+    list-style: none;
+    padding: 10px;
+}
+
+.footer{
+    background-color: white;
+}
+
+.footer-col{
+    width: 20%;
+}
+
+.footer-col h4{
+    font-size: 24px;
+    color: black;
+    position: relative;
+    font-size: 15px;
+    left: 3%;
+    padding-top: 4x;
+}
+
+
+.footer-col ul li{
+    margin-bottom: 10px;
+
+}
+
+.footer-col ul li a{
+    font-size: 18px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    color: black;
+    display: block;
+    transition: all 300ms ease;
+    font-size: 10px;
+
+}
+
+.footer-col ul li a:hover{
+    color: #4B56D2;
+    padding-left: 5px;
+}
+
+.footer-col img{
+    border-radius: 50%;
+}
+
+/*responsive*/
+@media(max-width: 970px){
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width: 574px){
+    .footer-col{
+        width: 100%;
+    }
 }
