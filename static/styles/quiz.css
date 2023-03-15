@@ -52,7 +52,8 @@ ul li label{
   padding: 10px 20px;
   width: 100%;
   display: inline-block;
-  background-color: #04adc4;
+  background-color: #4b6fd2;
+  color: white;
   border-radius: 12px;
 
 }
@@ -65,7 +66,7 @@ input:checked + label {
 }
 
 button{
-  background-color: #03cae4;
+  background-color: #4B56D2;
   color: #fff;
   border: none;
   display: block;
@@ -141,7 +142,6 @@ display: none;
       font-family: cursive;
       left: -200px;
 }
-
 
 
 

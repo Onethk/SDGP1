@@ -111,6 +111,11 @@ def testo1():
     c.execute('SELECT * FROM testomonial')
     # columns = [description[0] for description in c.description]
     data = c.fetchall()
+    
+    reversed_data = []
+    for i in range(len(data)-1, -1, -1):
+        reversed_data.append(data[i])
+    
     print(len(data))
     print(type(data))
     lenArr = len(data)
@@ -118,7 +123,7 @@ def testo1():
     # for row in data:
     #     print(row)
 
-    return render_template('testo2.html', data=data, lenArr=lenArr)
+    return render_template('testo2.html', reversed_data=reversed_data, lenArr=lenArr)
 
 
 @app.route('/testo11', methods=['POST'])
@@ -192,4 +197,4 @@ def tips():
 
 
 if __name__ == "__main__":
-    app.run(port= 7000, debug=True)
+    app.run(port= 8000, debug=True)
