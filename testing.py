@@ -108,7 +108,7 @@ def testo1():
 
     c = conn.cursor()
 
-    c.execute('SELECT * FROM testomonial')
+    c.execute('SELECT * FROM testomonial ORDER BY userID DESC LIMIT 6')
     # columns = [description[0] for description in c.description]
     data = c.fetchall()
     
