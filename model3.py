@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import accuracy_score
 
-df = pd.read_csv("Final5.csv")
+df = pd.read_csv("FinalDataset1.csv")
 # df.drop('HowYouPrepare',axis = 1, inplace = True)
 # df.drop('Rate yourself',axis = 1, inplace = True)
 
@@ -61,6 +61,6 @@ pipe.fit(X_train.values, y_train)
 
 import pickle
 
-with open('model_pickle_final.h5','wb') as f:
+with open('model_pickle_final1.h5','wb') as f:
     pickle.dump(pipe,f)
     
