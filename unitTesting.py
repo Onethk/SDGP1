@@ -46,7 +46,7 @@ class TestFlaskRoutes(unittest.TestCase):
 
     def test_tips_route(self):
         response = self.app.get('/tips')
-        self.assertEqual(response.status_code, 404)
+        self.assertEqual(response.status_code, 200)
 
     
     
