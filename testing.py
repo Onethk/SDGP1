@@ -185,7 +185,7 @@ def test():
     return jsonify({'arr_str':arr_str})
     
 
-@app.route('/')
+@app.route('/tips')
 def tips():
     mark = session.pop('mark', None)
     print(mark)
