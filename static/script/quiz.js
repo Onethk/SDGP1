@@ -221,13 +221,13 @@ function passingArray() {
     if (i == 0) {
       console.log("hello");
       if (testing2[i] == "a") {
-        testing3[i] = 0;
-      } else if (testing2[i] == "b") {
         testing3[i] = 1;
-      } else if (testing2[i] == "c") {
+      } else if (testing2[i] == "b") {
         testing3[i] = 2;
-      } else if (testing2[i] == "d") {
+      } else if (testing2[i] == "c") {
         testing3[i] = 3;
+      } else if (testing2[i] == "d") {
+        testing3[i] = 4;
       }
     } else if (i == 1) {
       if (testing2[i] == "a") {
