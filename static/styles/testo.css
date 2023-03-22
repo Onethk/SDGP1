@@ -211,11 +211,11 @@ a{
 }
 #sec1{
     position: relative;
-    right: 16%;
+    right: 5%;
 }
 #sec2{
     position: relative;
-    left: 3%;
+    left: -5%;
 }
 #hearHeading{
     color:black;
