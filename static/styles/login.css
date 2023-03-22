@@ -6,6 +6,11 @@ body{
 
 }
 
+#message-container {
+    padding-top: 10px;
+    color: red;
+}
+
 .container{
     display: flex;
     position: relative;

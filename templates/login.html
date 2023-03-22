@@ -18,6 +18,13 @@
                 <br><br>
                 <input type="password" name="password" placeholder="Password">
                 <br><br>
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                     <div id="message-container">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
                 <input type="submit" name="login" value="Login">
 
                   
